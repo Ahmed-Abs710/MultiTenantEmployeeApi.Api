@@ -50,7 +50,7 @@ namespace MultiTenantEmployeeApi.Api.Middlewares
 
                 var response = new ErrorResponse
                 {
-                    Error = ex.ToString() //"Internal Server Error"
+                    Error = "Internal Server Error" //ex.ToString()
                 };
 
                 await context.Response.WriteAsync(JsonSerializer.Serialize(response));
