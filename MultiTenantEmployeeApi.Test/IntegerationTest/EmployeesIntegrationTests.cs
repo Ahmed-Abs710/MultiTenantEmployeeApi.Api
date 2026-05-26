@@ -203,6 +203,7 @@ namespace MultiTenantEmployeeApi.Test.IntegerationTest
             var result = await response.Content.ReadFromJsonAsync<ApiResponseWrapper<PagedResult<EmployeeDto>>>();
 
             result.Should().NotBeNull();
+            result.Data?.Items.Should().HaveCount(1);
             result.Data?.Items.First().Email.Should().Be("a@test.com");
         }
 
